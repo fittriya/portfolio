@@ -44,7 +44,7 @@ function Index() {
         <p className="mt-4 text-xl text-muted-foreground md:text-2xl">
           Computer Science and Engineering Student
         </p>
-        <p className="mt-3 text-muted-foreground">📍 Korea University, Seoul</p>
+        <p className="mt-3 text-muted-foreground">Korea University, Seoul</p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
         <a
           href={`mailto:${EMAIL}`}
