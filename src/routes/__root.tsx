@@ -80,7 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Fittriya Nurul — Portfolio" },
-      { name: "description", content: "Software portfolio of Fittriya Nurul Syuhada Rosli." },
+      { name: "description", content: "Software portfolio of Fittriya Nurul Syuhada Binti Rosli." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
 
@@ -101,13 +101,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 const navItem =
-  "shrink-0 rounded-full px-3 py-1.5 text-sm text-muted-foreground transition hover:bg-secondary hover:text-foreground data-[status=active]:bg-secondary data-[status=active]:font-medium data-[status=active]:text-foreground";
+  "shrink-0 rounded-full px-3 py-1.5 text-sm text-sidebar-foreground/80 transition hover:bg-sidebar-accent hover:text-sidebar-foreground data-[status=active]:bg-sidebar-accent data-[status=active]:font-medium data-[status=active]:text-sidebar-foreground";
 
 function SiteNav() {
   return (
-    <nav className="sticky top-4 z-20 mx-auto mt-6 flex w-fit max-w-[95vw] items-center gap-1 overflow-x-auto rounded-full border border-border bg-background/80 px-4 py-2 backdrop-blur">
+    <nav className="sticky top-4 z-20 mx-auto mt-6 flex w-fit max-w-[95vw] items-center gap-1 overflow-x-auto rounded-full border border-sidebar-border bg-sidebar px-4 py-2 text-sidebar-foreground">
       <Link to="/" className="mr-3 shrink-0 font-bold" activeOptions={{ exact: true }}>
-        fittriya<span className="text-gradient">.</span>
+        fittriya<span className="text-sidebar-primary">.</span>
       </Link>
       <Link to="/about" className={navItem}>
         About
@@ -134,7 +134,7 @@ function SiteFooter() {
       <a href={`mailto:${EMAIL}`} className="hover:text-primary">
         {EMAIL}
       </a>
-      <p className="mt-2">© {new Date().getFullYear()} Fittriya Nurul Syuhada Rosli</p>
+      <p className="mt-2">© {new Date().getFullYear()} Fittriya Nurul Syuhada Binti Rosli</p>
     </footer>
   );
 }
@@ -146,8 +146,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <HeadContent />
       <div className="relative flex min-h-screen flex-col overflow-hidden">
-        <div aria-hidden className="pointer-events-none absolute -left-24 top-20 size-96 rounded-full border border-border" />
-        <div aria-hidden className="pointer-events-none absolute -right-16 top-40 size-64 rounded-full border border-border" />
         <SiteNav />
         <main className="mx-auto w-full max-w-5xl flex-1 px-6">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}

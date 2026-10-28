@@ -5,13 +5,13 @@ import { EMAIL, stats } from "@/data/portfolio";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Fittriya Nurul Syuhada Rosli" },
+      { title: "About — Fittriya Nurul Syuhada Binti Rosli" },
       {
         name: "description",
         content:
           "Third-year Computer Science & Engineering student at Korea University, passionate about efficient, secure, user-focused systems.",
       },
-      { property: "og:title", content: "About — Fittriya Nurul Syuhada Rosli" },
+      { property: "og:title", content: "About — Fittriya Nurul Syuhada Binti Rosli" },
       {
         property: "og:description",
         content: "Third-year CSE student at Korea University seeking a software internship (Jan–Feb 2027).",
@@ -45,7 +45,7 @@ function About() {
             testing, with a strong interest in building efficient, secure, user-focused systems — and eager
             to contribute to innovative projects in collaborative teams.
           </p>
-          <div className="mt-8 grid grid-cols-3 gap-4">
+          <div className="mt-8 grid grid-cols-2 gap-4">
             {stats.map(([v, l]) => (
               <div key={l} className="rounded-xl border border-border bg-card p-4 text-center">
                 <div className="text-2xl font-bold text-gradient">{v}</div>

@@ -5,16 +5,16 @@ import { EMAIL, projects } from "@/data/portfolio";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Fittriya Nurul Syuhada Rosli" },
+      { title: "Projects — Fittriya Nurul Syuhada Binti Rosli" },
       {
         name: "description",
         content:
-          "Eight projects: an eBPF load balancer, a compiler, model checking, mutation testing, WrapFS and a mini OS for ARM.",
+          "Project portfolio of Fittriya Nurul Syuhada Binti Rosli.",
       },
-      { property: "og:title", content: "Projects — Fittriya Nurul Syuhada Rosli" },
+      { property: "og:title", content: "Projects — Fittriya Nurul Syuhada Binti Rosli" },
       {
         property: "og:description",
-        content: "Systems, compilers, verification, embedded and web projects.",
+        content: "Projects and contributions.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -26,8 +26,11 @@ export const Route = createFileRoute("/projects")({
 function Projects() {
   return (
     <div className="pb-24">
-      <PageHero ghost="Projects" title="Projects" sub="Things I've built" />
+      <PageHero ghost="Projects" title="Projects" sub="My work" />
 
+      {projects.length === 0 && (
+        <p className="my-20 text-center text-muted-foreground">Projects will be added soon.</p>
+      )}
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         {projects.map((p) => (
           <article
@@ -59,13 +62,13 @@ function Projects() {
           href={`mailto:${EMAIL}`}
           className="rounded-full bg-gradient-brand px-6 py-3 font-medium text-primary-foreground transition hover:scale-105"
         >
-          ✉ Ask me about these
+          ✉ Get in touch
         </a>
         <Link
           to="/skills"
           className="rounded-full border border-input px-6 py-3 font-medium transition hover:bg-secondary"
         >
-          Skills used
+          View skills
         </Link>
       </div>
     </div>

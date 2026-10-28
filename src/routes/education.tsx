@@ -5,13 +5,13 @@ import { education } from "@/data/portfolio";
 export const Route = createFileRoute("/education")({
   head: () => ({
     meta: [
-      { title: "Education — Fittriya Nurul Syuhada Rosli" },
+      { title: "Education — Fittriya Nurul Syuhada Binti Rosli" },
       {
         name: "description",
         content:
           "B.S. Computer Science and Engineering at Korea University (CGPA 3.64/4.50), Foundation at UniKL (3.95/4.00).",
       },
-      { property: "og:title", content: "Education — Fittriya Nurul Syuhada Rosli" },
+      { property: "og:title", content: "Education — Fittriya Nurul Syuhada Binti Rosli" },
       {
         property: "og:description",
         content: "Korea University CSE, UniKL Foundation and SPM results.",

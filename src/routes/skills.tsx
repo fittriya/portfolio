@@ -5,13 +5,13 @@ import { skills } from "@/data/portfolio";
 export const Route = createFileRoute("/skills")({
   head: () => ({
     meta: [
-      { title: "Skills — Fittriya Nurul Syuhada Rosli" },
+      { title: "Skills — Fittriya Nurul Syuhada Binti Rosli" },
       {
         name: "description",
         content:
           "Programming languages, tools, soft skills and spoken languages: Java, Python, C++, C, OCaml, Linux, Git, Docker, eBPF and more.",
       },
-      { property: "og:title", content: "Skills — Fittriya Nurul Syuhada Rosli" },
+      { property: "og:title", content: "Skills — Fittriya Nurul Syuhada Binti Rosli" },
       {
         property: "og:description",
         content: "Programming languages, tools, soft skills and spoken languages.",

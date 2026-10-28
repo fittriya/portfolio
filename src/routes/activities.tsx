@@ -5,16 +5,16 @@ import { EMAIL, activities } from "@/data/portfolio";
 export const Route = createFileRoute("/activities")({
   head: () => ({
     meta: [
-      { title: "Activities — Fittriya Nurul Syuhada Rosli" },
+      { title: "Activities — Fittriya Nurul Syuhada Binti Rosli" },
       {
         name: "description",
         content:
           "Volunteering at the QS Higher Ed Summit and a career symposium, plus Korea University bike team and KUISA.",
       },
-      { property: "og:title", content: "Activities — Fittriya Nurul Syuhada Rosli" },
+      { property: "og:title", content: "Activities — Fittriya Nurul Syuhada Binti Rosli" },
       {
         property: "og:description",
-        content: "Volunteering, clubs and community work beyond the classroom.",
+        content: "Volunteering, clubs and community work beyond the class.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/activities")({
 function Activities() {
   return (
     <div className="pb-24">
-      <PageHero ghost="Activities" title="Activities" sub="Beyond the classroom" />
+      <PageHero ghost="Activities" title="Activities" sub="Community &amp; Involvement" />
 
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         {activities.map((a) => (
