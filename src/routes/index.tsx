@@ -42,7 +42,7 @@ function Index() {
           <span className="text-gradient">Binti Rosli</span>
         </h1>
         <p className="mt-4 text-xl text-muted-foreground md:text-2xl">
-          Software Engineering &amp; QA <span className="text-primary">|</span>
+          Computer Science and Engineering Student
         </p>
         <p className="mt-3 text-muted-foreground">📍 Korea University, Seoul</p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
