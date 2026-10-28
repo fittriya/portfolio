@@ -49,7 +49,7 @@ function Activities() {
           to="/"
           className="rounded-full border border-input px-6 py-3 font-medium transition hover:bg-secondary"
         >
-          Back to top
+          Back to Home
         </Link>
       </div>
     </div>
