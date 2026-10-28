@@ -32,7 +32,7 @@ export const education = [
   },
   {
     school: "Sekolah Seri Puteri, Cyberjaya",
-    years: "",
+    years: "2017 – 2022",
     degree: "Sijil Pelajaran Malaysia (SPM)",
     note: "9As",
   },
