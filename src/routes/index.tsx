@@ -37,8 +37,9 @@ function Index() {
         <p className="mb-6 rounded-full border border-border px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
           Seeking internship · Jan – Feb 2027
         </p>
-        <h1 className="text-5xl font-bold leading-tight md:text-8xl">
-          Fittriya <span className="text-gradient">Nurul</span>
+        <h1 className="max-w-4xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+          Fittriya Nurul Syuhada<br />
+          <span className="text-gradient">Binti Rosli</span>
         </h1>
         <p className="mt-4 text-xl text-muted-foreground md:text-2xl">
           Software Engineering &amp; QA <span className="text-primary">|</span>
