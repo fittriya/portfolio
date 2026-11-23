@@ -85,7 +85,7 @@
   --border: oklch(0.850 0.018 115);
   --input: oklch(0.790 0.025 120);
   --ring: oklch(0.440 0.050 130);
-  --ghost: oklch(0.905 0.018 115);
+  --ghost: oklch(1 0 0 / 0.55);
   --chart-1: oklch(0.385 0.030 130);
   --chart-2: oklch(0.540 0.055 140);
   --chart-3: oklch(0.660 0.060 115);
@@ -108,7 +108,7 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background-color: transparent;
     color: var(--color-foreground);
   }
 }
@@ -124,4 +124,55 @@
 @utility bg-gradient-brand {
   background: var(--gradient-brand);
 }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background-color: var(--background); }
+
+/* ---------- Glassmorphism ---------- */
+/* Frosted panel: see-through white, blurred background, light edge. Use class="glass". */
+@utility glass {
+  background: oklch(1 0 0 / 0.38);
+  border: 1px solid oklch(1 0 0 / 0.6);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  box-shadow:
+    0 8px 32px oklch(0.285 0.016 130 / 0.08),
+    inset 0 1px 0 oklch(1 0 0 / 0.7);
+}
+/* Smaller frosted pill for tags and chips. */
+@utility glass-chip {
+  background: oklch(1 0 0 / 0.45);
+  border: 1px solid oklch(1 0 0 / 0.65);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Soft colour blobs behind every page; the glass panels blur them. */
+.glass-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--background);
+}
+.glass-bg span {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.75;
+  animation: glass-float 22s ease-in-out infinite alternate;
+}
+.glass-bg span:nth-child(1) { width: 42vw; height: 42vw; left: -10vw; top: -8vw; background: oklch(0.82 0.09 140); }
+.glass-bg span:nth-child(2) { width: 36vw; height: 36vw; right: -8vw; top: 10vh; background: oklch(0.84 0.07 195); animation-delay: -6s; }
+.glass-bg span:nth-child(3) { width: 34vw; height: 34vw; left: 25vw; bottom: -12vw; background: oklch(0.86 0.06 300); animation-delay: -12s; }
+.glass-bg span:nth-child(4) { width: 26vw; height: 26vw; right: 12vw; bottom: 8vh; background: oklch(0.9 0.07 75); animation-delay: -18s; }
+@keyframes glass-float {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(4vw, 3vh) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-bg span { animation: none; }
+}
+@media (max-width: 640px) {
+  .glass-bg span { filter: blur(60px); }
+  .glass-bg span:nth-child(n) { width: 70vw; height: 70vw; }
+}

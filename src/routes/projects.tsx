@@ -140,11 +140,11 @@ function Projects() {
                   }}
                 >
                   <div
-                    className={`overflow-hidden rounded-2xl border border-border bg-card ${
+                    className={`overflow-hidden rounded-2xl glass ${
                       isActive ? "shadow-2xl" : "shadow-md"
                     }`}
                   >
-                    <div className="flex items-center gap-1.5 border-b border-border bg-background/80 px-3 py-2">
+                    <div className="flex items-center gap-1.5 px-2.5 pt-1 pb-2.5">
                       <span className="size-2 rounded-full bg-muted-foreground/30" />
                       <span className="size-2 rounded-full bg-muted-foreground/30" />
                       <span className="size-2 rounded-full bg-muted-foreground/30" />
@@ -158,10 +158,10 @@ function Projects() {
                         alt={`Screenshot of ${p.title}`}
                         draggable={false}
                         loading={i === 0 ? "eager" : "lazy"}
-                        className="aspect-[16/10] w-full object-cover"
+                        className="aspect-[16/10] w-full rounded-xl object-cover"
                       />
                     ) : (
-                      <div className="flex aspect-[16/10] items-center justify-center bg-gradient-brand p-8 text-center text-2xl font-bold text-primary-foreground">
+                      <div className="flex aspect-[16/10] items-center justify-center rounded-xl bg-gradient-brand p-8 text-center text-2xl font-bold text-primary-foreground">
                         {p.title}
                       </div>
                     )}
@@ -174,7 +174,7 @@ function Projects() {
           <article
             key={current.title}
             aria-live="polite"
-            className="mx-auto mt-8 max-w-3xl animate-in fade-in slide-in-from-bottom-2 duration-500"
+            className="glass mx-auto mt-8 max-w-3xl rounded-3xl p-6 md:p-8 animate-in fade-in slide-in-from-bottom-2 duration-500"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-3">
               <h2 className="text-2xl font-bold md:text-3xl">{current.title}</h2>
@@ -191,7 +191,7 @@ function Projects() {
                   className={
                     i === 0
                       ? "rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
-                      : "rounded-full border border-input px-5 py-2 text-sm font-medium transition hover:bg-secondary"
+                      : "rounded-full glass px-5 py-2 text-sm font-medium transition hover:bg-white/60"
                   }
                 >
                   {l.label} ↗
@@ -200,10 +200,7 @@ function Projects() {
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
               {current.tags.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full border border-primary/40 px-3 py-1 text-xs text-primary"
-                >
+                <span key={t} className="rounded-full glass-chip px-3 py-1 text-xs text-primary">
                   {t}
                 </span>
               ))}
@@ -221,7 +218,7 @@ function Projects() {
         </a>
         <Link
           to="/skills"
-          className="rounded-full border border-input px-6 py-3 font-medium transition hover:bg-secondary"
+          className="rounded-full glass px-6 py-3 font-medium transition hover:bg-white/60"
         >
           View skills
         </Link>

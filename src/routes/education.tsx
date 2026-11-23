@@ -30,7 +30,7 @@ function Education() {
 
       <div className="mt-16 space-y-6">
         {education.map((e) => (
-          <div key={e.school} className="rounded-2xl border-l-4 border-primary bg-card p-6">
+          <div key={e.school} className="rounded-2xl glass p-6">
             <div className="flex flex-wrap justify-between gap-2">
               <h3 className="text-lg font-semibold">{e.school}</h3>
               <span className="text-sm text-primary">{e.years}</span>
@@ -50,7 +50,7 @@ function Education() {
         </Link>
         <Link
           to="/activities"
-          className="rounded-full border border-input px-6 py-3 font-medium transition hover:bg-secondary"
+          className="rounded-full glass px-6 py-3 font-medium transition hover:bg-white/60"
         >
           Activities
         </Link>

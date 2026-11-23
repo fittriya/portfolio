@@ -30,7 +30,7 @@ function Activities() {
 
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         {activities.map((a) => (
-          <div key={a.title} className="rounded-2xl border border-border bg-card p-6">
+          <div key={a.title} className="rounded-2xl glass p-6">
             <span className="text-xs text-primary">{a.year}</span>
             <h3 className="mt-1 font-semibold">{a.title}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{a.desc}</p>
@@ -47,7 +47,7 @@ function Activities() {
         </a>
         <Link
           to="/"
-          className="rounded-full border border-input px-6 py-3 font-medium transition hover:bg-secondary"
+          className="rounded-full glass px-6 py-3 font-medium transition hover:bg-white/60"
         >
           Back to Home
         </Link>

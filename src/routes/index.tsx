@@ -13,7 +13,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Fittriya Nurul Syuhada Binti Rosli — CS Portfolio" },
       {
         property: "og:description",
-        content: "Systems, compilers, verification and web projects by a Korea University CSE student.",
+        content:
+          "Systems, compilers, verification and web projects by a Korea University CSE student.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
@@ -34,11 +35,12 @@ function Index() {
   return (
     <div className="pb-16">
       <header className="flex flex-col items-center pb-10 pt-24 text-center">
-        <p className="mb-6 rounded-full border border-border px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+        <p className="mb-6 rounded-full glass-chip px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
           Seeking internship · Jan – Feb 2027
         </p>
         <h1 className="max-w-4xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-          Fittriya Nurul Syuhada<br />
+          Fittriya Nurul Syuhada
+          <br />
           <span className="text-gradient">Binti Rosli</span>
         </h1>
         <p className="mt-4 text-xl text-muted-foreground md:text-2xl">
@@ -46,18 +48,18 @@ function Index() {
         </p>
         <p className="mt-3 text-muted-foreground">Korea University, Seoul</p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-        <a
-          href={`mailto:${EMAIL}`}
-          className="rounded-full bg-gradient-brand px-8 py-4 font-medium text-primary-foreground shadow-lg transition hover:scale-105"
-        >
-          ✉ Let's Connect
-        </a>
+          <a
+            href={`mailto:${EMAIL}`}
+            className="rounded-full bg-gradient-brand px-8 py-4 font-medium text-primary-foreground shadow-lg transition hover:scale-105"
+          >
+            ✉ Let's Connect
+          </a>
         </div>
       </header>
 
       <section className="mx-auto mt-10 grid max-w-xl grid-cols-2 gap-4">
         {stats.map(([v, l]) => (
-          <div key={l} className="rounded-xl border border-border bg-card p-4 text-center">
+          <div key={l} className="rounded-xl glass p-4 text-center">
             <div className="text-2xl font-bold text-gradient">{v}</div>
             <div className="mt-1 text-xs text-muted-foreground">{l}</div>
           </div>
@@ -71,19 +73,24 @@ function Index() {
             <Link
               key={e.to}
               to={e.to}
-              className="group rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary"
+              className="group rounded-2xl glass p-6 transition hover:-translate-y-1 hover:bg-white/55"
             >
-              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{e.sub}</span>
-              <span className="mt-2 block text-lg font-semibold group-hover:text-primary">{e.title} →</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                {e.sub}
+              </span>
+              <span className="mt-2 block text-lg font-semibold group-hover:text-primary">
+                {e.title} →
+              </span>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="mt-20 rounded-2xl border border-border bg-card p-8 text-center">
+      <section className="mt-20 rounded-2xl glass p-8 text-center">
         <h2 className="text-2xl font-semibold">Let's build something together</h2>
         <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-          Open to software engineering and quality assurance internships in January – February 2027. Reach out and I'll get back to you.
+          Open to software engineering and quality assurance internships in January – February 2027.
+          Reach out and I'll get back to you.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <a
@@ -94,14 +101,14 @@ function Index() {
           </a>
           <Link
             to="/projects"
-            className="rounded-full border border-input px-6 py-3 font-medium transition hover:bg-secondary"
+            className="rounded-full glass px-6 py-3 font-medium transition hover:bg-white/60"
           >
             Projects
           </Link>
         </div>
         <div className="mt-8 flex flex-wrap justify-center gap-2">
           {skills.Languages.slice(0, 6).map((s) => (
-            <span key={s} className="rounded-full bg-secondary px-3 py-1 text-sm">
+            <span key={s} className="rounded-full glass-chip px-3 py-1 text-sm">
               {s}
             </span>
           ))}
