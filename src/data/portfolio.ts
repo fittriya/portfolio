@@ -6,12 +6,15 @@ export type Project = {
   tags: string[];
   points: string[];
   links?: { label: string; href: string }[];
+  /** Screenshot in public/projects/, shown in the Projects carousel (16:10 works best). */
+  image?: string;
 };
 
 export const projects: Project[] = [
   {
     title: "Martianauts: Mars Mission Trainer",
     date: "Nov 2026",
+    image: "/projects/mars.jpg",
     tags: ["NASA Space Apps 2026", "JavaScript", "Vite", "Game Dev"],
     points: [
       "Interactive Mars survival and science game for children aged 7–12, built in a team for NASA Space Apps Challenge 2026",
@@ -27,6 +30,7 @@ export const projects: Project[] = [
   {
     title: "FitCore: Rehab Exercise Tracker on AWS",
     date: "Nov 2026",
+    image: "/projects/fitcore.jpg",
     tags: ["AWS Amplify", "Cognito", "DynamoDB", "JavaScript"],
     points: [
       "Rehabilitation exercise logging prototype with patient and clinician views",
@@ -43,8 +47,24 @@ export const projects: Project[] = [
 
 export const skills = {
   Languages: ["Java", "Python", "C++", "C", "Scala", "OCaml", "ARM Assembly", "Verilog"],
-  Tools: ["Linux", "Git", "Docker", "GCC", "eBPF", "SPIN / Promela", "Pytest", "Zedboard", "WordPress"],
-  "Soft skills": ["Leadership", "Teamwork", "Problem-Solving", "Communication", "Critical Thinking"],
+  Tools: [
+    "Linux",
+    "Git",
+    "Docker",
+    "GCC",
+    "eBPF",
+    "SPIN / Promela",
+    "Pytest",
+    "Zedboard",
+    "WordPress",
+  ],
+  "Soft skills": [
+    "Leadership",
+    "Teamwork",
+    "Problem-Solving",
+    "Communication",
+    "Critical Thinking",
+  ],
   Spoken: ["Bahasa Malaysia", "English (fluent)", "Korean (intermediate)"],
 };
 
