@@ -30,7 +30,7 @@ export const projects: Project[] = [
     image: "/projects/fitcore.jpg",
     tags: ["AWS Amplify", "Cognito", "DynamoDB", "JavaScript"],
     summary:
-      "A rehab app that helps patients with a slipped disc do their exercises safely at home, and gives doctors a dashboard to easily collect and follow their patients' exercise data. Records are stored securely.",
+      "A rehab app for patients with a slipped disc. Patients follow the exercises their doctor prescribes, with guides and safety warnings, and log their pain before and after each session. Doctors get a dashboard of every patient's progress and pain trends, with alerts when pain gets worse, and can prescribe exercises and message patients.",
     links: [
       { label: "Try the app", href: "https://gbsvb13.github.io/fitcore/" },
       { label: "GitHub", href: "https://github.com/gbsvb13/fitcore" },
