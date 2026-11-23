@@ -32,6 +32,19 @@ function Projects() {
   const [dragging, setDragging] = useState(false);
   const drag = useRef<{ startX: number; index: number | null } | null>(null);
   const wheelLock = useRef(0);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function hoverTo(i: number, e: PointerEvent<HTMLDivElement>) {
+    // Mouse only: hovering a side project brings it to the middle.
+    if (e.pointerType !== "mouse" || drag.current || i === active) return;
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    hoverTimer.current = setTimeout(() => go(i), 150);
+  }
+
+  function cancelHover() {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    hoverTimer.current = null;
+  }
 
   const count = projects.length;
   const go = (i: number) => setActive(((i % count) + count) % count);
@@ -112,6 +125,8 @@ function Projects() {
                   key={p.title}
                   data-index={i}
                   aria-hidden={!isActive}
+                  onPointerEnter={(e) => hoverTo(i, e)}
+                  onPointerLeave={cancelHover}
                   className={`absolute left-1/2 top-1/2 w-[78%] sm:w-[66%] ${
                     dragging
                       ? ""
@@ -156,48 +171,10 @@ function Projects() {
             })}
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-4">
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Previous project"
-              className="grid size-10 place-items-center rounded-full border border-input transition hover:bg-secondary"
-            >
-              ←
-            </button>
-            <div className="flex gap-2">
-              {projects.map((p, i) => (
-                <button
-                  key={p.title}
-                  type="button"
-                  onClick={() => go(i)}
-                  aria-label={`Show ${p.title}`}
-                  aria-current={i === active}
-                  className={`h-2 rounded-full transition-all ${
-                    i === active
-                      ? "w-6 bg-primary"
-                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Next project"
-              className="grid size-10 place-items-center rounded-full border border-input transition hover:bg-secondary"
-            >
-              →
-            </button>
-          </div>
-          <p className="mt-3 text-center text-xs text-muted-foreground">
-            Drag or swipe to see more
-          </p>
-
           <article
             key={current.title}
             aria-live="polite"
-            className="mx-auto mt-10 max-w-3xl animate-in fade-in slide-in-from-bottom-2 duration-500"
+            className="mx-auto mt-8 max-w-3xl animate-in fade-in slide-in-from-bottom-2 duration-500"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-3">
               <h2 className="text-2xl font-bold md:text-3xl">{current.title}</h2>
