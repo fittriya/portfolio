@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
-import { EMAIL, stats } from "@/data/portfolio";
+import { EMAIL, EMAIL_LINK, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -61,7 +61,9 @@ function About() {
           See my projects
         </Link>
         <a
-          href={`mailto:${EMAIL}`}
+          href={EMAIL_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full glass px-6 py-3 font-medium transition hover:bg-white/60"
         >
           ✉ Get in touch

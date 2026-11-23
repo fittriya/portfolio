@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
-import { EMAIL } from "@/data/portfolio";
+import { EMAIL, EMAIL_LINK } from "@/data/portfolio";
 
 function NotFoundComponent() {
   return (
@@ -130,7 +130,7 @@ function SiteNav() {
 function SiteFooter() {
   return (
     <footer className="mt-10 border-t border-white/50 py-10 text-center text-sm text-muted-foreground">
-      <a href={`mailto:${EMAIL}`} className="hover:text-primary">
+      <a href={EMAIL_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
         {EMAIL}
       </a>
       <p className="mt-2">© {new Date().getFullYear()} Fittriya Nurul Syuhada Binti Rosli</p>

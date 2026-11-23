@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { EMAIL, skills, stats } from "@/data/portfolio";
+import { EMAIL, EMAIL_LINK, skills, stats } from "@/data/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,7 +49,9 @@ function Index() {
         <p className="mt-3 text-muted-foreground">Korea University, Seoul</p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <a
-            href={`mailto:${EMAIL}`}
+            href={EMAIL_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-gradient-brand px-8 py-4 font-medium text-primary-foreground shadow-lg transition hover:scale-105"
           >
             ✉ Let's Connect
@@ -94,7 +96,9 @@ function Index() {
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <a
-            href={`mailto:${EMAIL}`}
+            href={EMAIL_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-gradient-brand px-6 py-3 font-medium text-primary-foreground transition hover:scale-105"
           >
             ✉ {EMAIL}

@@ -1,5 +1,8 @@
 export const EMAIL = "fittriyanurul@gmail.com";
 
+/** Opens a new Gmail message to EMAIL in the browser (instead of the computer's mail app). */
+export const EMAIL_LINK = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`;
+
 export type Project = {
   title: string;
   date: string;
