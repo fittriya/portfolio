@@ -84,6 +84,11 @@ export const education = [
 
 export const activities = [
   {
+    title: "Marathon Volunteer — JTBC Marathon",
+    year: "2026",
+    desc: "Monitored a road closure along the marathon route to keep the course clear for runners, and directed approaching drivers away from the restricted road.",
+  },
+  {
     title: "Student Volunteer — QS Higher Ed Summit: Asia Pacific",
     year: "2025",
     desc: "Supported operations, logistics and registration for an international higher-education event.",
