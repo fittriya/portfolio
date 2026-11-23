@@ -39,11 +39,25 @@ export const projects: Project[] = [
 ];
 
 export const skills = {
-  Languages: ["Java", "Python", "C++", "C", "Scala", "OCaml", "ARM Assembly", "Verilog"],
+  Languages: [
+    "Java",
+    "Python",
+    "JavaScript",
+    "HTML/CSS",
+    "C++",
+    "C",
+    "Scala",
+    "OCaml",
+    "ARM Assembly",
+    "Verilog",
+  ],
   Tools: [
     "Linux",
     "Git",
+    "GitHub",
+    "AWS (Amplify, Cognito, DynamoDB)",
     "Docker",
+    "Vite",
     "GCC",
     "eBPF",
     "SPIN / Promela",
