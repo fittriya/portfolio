@@ -1,9 +1,9 @@
 export function PageHero({ ghost, title, sub }: { ghost: string; title: string; sub: string }) {
   return (
-    <header className="relative pt-28 text-center">
+    <header className="relative pt-28 text-center md:pt-40">
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 -top-8 select-none text-7xl font-extrabold uppercase tracking-tight text-ghost md:-top-16 md:text-[9rem]"
+        className="pointer-events-none absolute inset-x-0 top-4 select-none text-7xl leading-none font-extrabold uppercase tracking-tight text-ghost md:top-2 md:text-[9rem]"
       >
         {ghost}
       </span>
@@ -13,7 +13,9 @@ export function PageHero({ ghost, title, sub }: { ghost: string; title: string; 
         <span className="size-2 rounded-full bg-primary" />
         <span className="h-0.5 w-10 bg-primary" />
       </div>
-      <p className="relative mt-4 text-sm uppercase tracking-[0.2em] text-muted-foreground">{sub}</p>
+      <p className="relative mt-4 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+        {sub}
+      </p>
     </header>
   );
 }

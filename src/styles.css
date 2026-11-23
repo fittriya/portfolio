@@ -85,7 +85,7 @@
   --border: oklch(0.850 0.018 115);
   --input: oklch(0.790 0.025 120);
   --ring: oklch(0.440 0.050 130);
-  --ghost: oklch(1 0 0 / 0.55);
+  --ghost: oklch(0.385 0.030 130 / 0.16);
   --chart-1: oklch(0.385 0.030 130);
   --chart-2: oklch(0.540 0.055 140);
   --chart-3: oklch(0.660 0.060 115);
