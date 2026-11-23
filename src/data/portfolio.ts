@@ -25,12 +25,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "FitCore: Rehab Exercise Tracker on AWS",
+    title: "FitCore: Rehab Exercise Tracker",
     date: "Nov 2026",
     image: "/projects/fitcore.jpg",
     tags: ["AWS Amplify", "Cognito", "DynamoDB", "JavaScript"],
     summary:
-      "A rehab app that helps patients with a slipped disc do their exercises safely at home, and gives doctors a dashboard to easily collect and follow their patients' exercise data. Records are stored securely on AWS.",
+      "A rehab app that helps patients with a slipped disc do their exercises safely at home, and gives doctors a dashboard to easily collect and follow their patients' exercise data. Records are stored securely.",
     links: [
       { label: "Try the app", href: "https://gbsvb13.github.io/fitcore/" },
       { label: "GitHub", href: "https://github.com/gbsvb13/fitcore" },
