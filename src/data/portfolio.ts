@@ -34,7 +34,10 @@ export const projects: Project[] = [
       "Stored exercise records in DynamoDB through Amplify Gen 2, with owner-only access rules",
       "Tested with two accounts that one user cannot read, edit or delete another user's records",
     ],
-    links: [{ label: "GitHub", href: "https://github.com/gbsvb13/fitcore" }],
+    links: [
+      { label: "Try the app", href: "https://gbsvb13.github.io/fitcore/" },
+      { label: "GitHub", href: "https://github.com/gbsvb13/fitcore" },
+    ],
   },
 ];
 
