@@ -46,6 +46,21 @@ function Projects() {
                 <li key={pt}>{pt}</li>
               ))}
             </ul>
+            {p.links && p.links.length > 0 && (
+              <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+                {p.links.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    {l.label} ↗
+                  </a>
+                ))}
+              </div>
+            )}
             <div className="mt-5 flex flex-wrap gap-2">
               {p.tags.map((t) => (
                 <span key={t} className="rounded-full border border-primary/40 px-3 py-1 text-xs text-primary">

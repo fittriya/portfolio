@@ -5,10 +5,38 @@ export type Project = {
   date: string;
   tags: string[];
   points: string[];
+  links?: { label: string; href: string }[];
 };
 
-// Add your projects here when you are ready.
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    title: "Martianauts: Mars Mission Trainer",
+    date: "Nov 2026",
+    tags: ["NASA Space Apps 2026", "JavaScript", "Vite", "Game Dev"],
+    points: [
+      "Interactive Mars survival and science game for children aged 7–12, built in a team for NASA Space Apps Challenge 2026",
+      "Built the shared base map with Mars scenery (mesa, craters, dunes) and the solar panel yard",
+      "Made the mission side panel: mission clock, radiation hazard meter, solar storms and EVA GO / NO GO status",
+      "Teaches how radiation, shelter and water shielding keep astronauts safe on Mars",
+    ],
+    links: [
+      { label: "Play the game", href: "https://safiahamni.github.io/mars-mission-trainer/" },
+      { label: "GitHub", href: "https://github.com/safiahamni/mars-mission-trainer" },
+    ],
+  },
+  {
+    title: "FitCore: Rehab Exercise Tracker on AWS",
+    date: "Nov 2026",
+    tags: ["AWS Amplify", "Cognito", "DynamoDB", "JavaScript"],
+    points: [
+      "Rehabilitation exercise logging prototype with patient and clinician views",
+      "Added sign-up, email verification and login with AWS Cognito",
+      "Stored exercise records in DynamoDB through Amplify Gen 2, with owner-only access rules",
+      "Tested with two accounts that one user cannot read, edit or delete another user's records",
+    ],
+    links: [{ label: "GitHub", href: "https://github.com/gbsvb13/fitcore" }],
+  },
+];
 
 export const skills = {
   Languages: ["Java", "Python", "C++", "C", "Scala", "OCaml", "ARM Assembly", "Verilog"],
