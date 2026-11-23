@@ -180,11 +180,7 @@ function Projects() {
               <h2 className="text-2xl font-bold md:text-3xl">{current.title}</h2>
               <span className="text-sm text-muted-foreground">{current.date}</span>
             </div>
-            <ul className="mt-4 list-disc space-y-1.5 pl-5 text-muted-foreground">
-              {current.points.map((pt) => (
-                <li key={pt}>{pt}</li>
-              ))}
-            </ul>
+            <p className="mt-4 leading-relaxed text-muted-foreground">{current.summary}</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               {current.links?.map((l, i) => (
                 <a

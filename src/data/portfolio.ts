@@ -4,7 +4,8 @@ export type Project = {
   title: string;
   date: string;
   tags: string[];
-  points: string[];
+  /** One or two sentences about what the project is. */
+  summary: string;
   links?: { label: string; href: string }[];
   /** Screenshot in public/projects/, shown in the Projects carousel (16:10 works best). */
   image?: string;
@@ -16,12 +17,8 @@ export const projects: Project[] = [
     date: "Nov 2026",
     image: "/projects/mars.jpg",
     tags: ["NASA Space Apps 2026", "JavaScript", "Vite", "Game Dev"],
-    points: [
-      "Interactive Mars survival and science game for children aged 7–12, built in a team for NASA Space Apps Challenge 2026",
-      "Built the shared base map with Mars scenery (mesa, craters, dunes) and the solar panel yard",
-      "Made the mission side panel: mission clock, radiation hazard meter, solar storms and EVA GO / NO GO status",
-      "Teaches how radiation, shelter and water shielding keep astronauts safe on Mars",
-    ],
+    summary:
+      "An interactive Mars survival and science game for children aged 7–12, made for NASA Space Apps Challenge 2026. Players explore a Mars base over six Sols, complete missions and learn how astronauts stay safe from radiation and solar storms.",
     links: [
       { label: "Play the game", href: "https://safiahamni.github.io/mars-mission-trainer/" },
       { label: "GitHub", href: "https://github.com/safiahamni/mars-mission-trainer" },
@@ -32,12 +29,8 @@ export const projects: Project[] = [
     date: "Nov 2026",
     image: "/projects/fitcore.jpg",
     tags: ["AWS Amplify", "Cognito", "DynamoDB", "JavaScript"],
-    points: [
-      "Rehabilitation exercise logging prototype with patient and clinician views",
-      "Added sign-up, email verification and login with AWS Cognito",
-      "Stored exercise records in DynamoDB through Amplify Gen 2, with owner-only access rules",
-      "Tested with two accounts that one user cannot read, edit or delete another user's records",
-    ],
+    summary:
+      "A rehabilitation exercise tracker with patient and clinician views. Users sign up and log in securely, and their exercise records are saved in the cloud on AWS, where only they can see them.",
     links: [
       { label: "Try the app", href: "https://gbsvb13.github.io/fitcore/" },
       { label: "GitHub", href: "https://github.com/gbsvb13/fitcore" },
