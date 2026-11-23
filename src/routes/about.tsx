@@ -29,12 +29,7 @@ function About() {
     <div className="pb-24">
       <PageHero ghost="About" title="About Me" sub="More about me" />
 
-      <div className="mt-16 grid items-center gap-12 md:grid-cols-2">
-        <div className="mx-auto grid size-64 place-items-center rounded-full bg-gradient-brand p-1.5 md:size-80">
-          <div className="grid size-full place-items-center rounded-full glass text-7xl font-bold">
-            <span className="text-gradient">FN</span>
-          </div>
-        </div>
+      <div className="mx-auto mt-16 max-w-3xl">
         <div>
           <h3 className="text-3xl font-semibold">
             Hey! I'm <span className="text-gradient">FITTRIYA</span>
