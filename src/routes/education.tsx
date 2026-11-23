@@ -46,7 +46,7 @@ function Education() {
           to="/projects"
           className="rounded-full bg-gradient-brand px-6 py-3 font-medium text-primary-foreground transition hover:scale-105"
         >
-          Coursework in action
+          Projects
         </Link>
         <Link
           to="/activities"
