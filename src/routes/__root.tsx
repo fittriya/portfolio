@@ -5,14 +5,13 @@ import {
   createRootRouteWithContext,
   useRouter,
   HeadContent,
-
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 
-import { EMAIL } from "@/data/portfolio";
+import { EMAIL, EMAIL_LINK } from "@/data/portfolio";
 
 function NotFoundComponent() {
   return (
@@ -39,9 +38,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-
-  }, [error]);
+  useEffect(() => {}, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -83,7 +80,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Software portfolio of Fittriya Nurul Syuhada Binti Rosli." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-
     ],
     links: [
       {
@@ -91,7 +87,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap",
+      },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
@@ -101,13 +100,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 const navItem =
-  "shrink-0 rounded-full px-3 py-1.5 text-sm text-sidebar-foreground/80 transition hover:bg-sidebar-accent hover:text-sidebar-foreground data-[status=active]:bg-sidebar-accent data-[status=active]:font-medium data-[status=active]:text-sidebar-foreground";
+  "shrink-0 rounded-full px-3 py-1.5 text-sm text-foreground/75 transition hover:bg-white/50 hover:text-foreground data-[status=active]:bg-primary data-[status=active]:font-medium data-[status=active]:text-primary-foreground";
 
 function SiteNav() {
   return (
-    <nav className="sticky top-4 z-20 mx-auto mt-6 flex w-fit max-w-[95vw] items-center gap-1 overflow-x-auto rounded-full border border-sidebar-border bg-sidebar px-4 py-2 text-sidebar-foreground">
+    <nav className="sticky top-4 z-20 mx-auto mt-6 flex w-fit max-w-[95vw] items-center gap-1 overflow-x-auto rounded-full glass px-4 py-2 text-foreground">
       <Link to="/" className="mr-3 shrink-0 font-bold" activeOptions={{ exact: true }}>
-        fittriya<span className="text-sidebar-primary">.</span>
+        fittriya<span className="text-primary/60">.</span>
       </Link>
       <Link to="/about" className={navItem}>
         About
@@ -130,8 +129,8 @@ function SiteNav() {
 
 function SiteFooter() {
   return (
-    <footer className="mt-10 border-t border-border py-10 text-center text-sm text-muted-foreground">
-      <a href={`mailto:${EMAIL}`} className="hover:text-primary">
+    <footer className="mt-10 border-t border-white/50 py-10 text-center text-sm text-muted-foreground">
+      <a href={EMAIL_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
         {EMAIL}
       </a>
       <p className="mt-2">© {new Date().getFullYear()} Fittriya Nurul Syuhada Binti Rosli</p>
@@ -145,6 +144,12 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <HeadContent />
+      <div aria-hidden className="glass-bg">
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
       <div className="relative flex min-h-screen flex-col overflow-hidden">
         <SiteNav />
         <main className="mx-auto w-full max-w-5xl flex-1 px-6">

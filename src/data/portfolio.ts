@@ -1,47 +1,80 @@
 export const EMAIL = "fittriyanurul@gmail.com";
 
+/** Opens a new Gmail message to EMAIL in the browser (instead of the computer's mail app). */
+export const EMAIL_LINK = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`;
+
 export type Project = {
   title: string;
   date: string;
   tags: string[];
-  points: string[];
+  /** One or two sentences about what the project is. */
+  summary: string;
   links?: { label: string; href: string }[];
+  /** Screenshot in public/projects/, shown in the Projects carousel (16:10 works best). */
+  image?: string;
 };
 
 export const projects: Project[] = [
   {
     title: "Martianauts: Mars Mission Trainer",
     date: "Nov 2026",
+    image: "/projects/mars.jpg",
     tags: ["NASA Space Apps 2026", "JavaScript", "Vite", "Game Dev"],
-    points: [
-      "Interactive Mars survival and science game for children aged 7–12, built in a team for NASA Space Apps Challenge 2026",
-      "Built the shared base map with Mars scenery (mesa, craters, dunes) and the solar panel yard",
-      "Made the mission side panel: mission clock, radiation hazard meter, solar storms and EVA GO / NO GO status",
-      "Teaches how radiation, shelter and water shielding keep astronauts safe on Mars",
-    ],
+    summary:
+      "An interactive Mars survival and science game for children aged 7–12, made for NASA Space Apps Challenge 2026. Players explore a Mars base over six Sols, complete missions and learn how astronauts stay safe from radiation and solar storms.",
     links: [
       { label: "Play the game", href: "https://safiahamni.github.io/mars-mission-trainer/" },
       { label: "GitHub", href: "https://github.com/safiahamni/mars-mission-trainer" },
     ],
   },
   {
-    title: "FitCore: Rehab Exercise Tracker on AWS",
+    title: "FitCore: Rehab Exercise Tracker",
     date: "Nov 2026",
+    image: "/projects/fitcore.jpg",
     tags: ["AWS Amplify", "Cognito", "DynamoDB", "JavaScript"],
-    points: [
-      "Rehabilitation exercise logging prototype with patient and clinician views",
-      "Added sign-up, email verification and login with AWS Cognito",
-      "Stored exercise records in DynamoDB through Amplify Gen 2, with owner-only access rules",
-      "Tested with two accounts that one user cannot read, edit or delete another user's records",
+    summary:
+      "A rehab app for patients with a slipped disc. Patients follow the exercises their doctor prescribes, with guides and safety warnings, and log their pain before and after each session. Doctors get a dashboard of every patient's progress and pain trends, with alerts when pain gets worse, and can prescribe exercises and message patients.",
+    links: [
+      { label: "Try the app", href: "https://gbsvb13.github.io/fitcore/" },
+      { label: "GitHub", href: "https://github.com/gbsvb13/fitcore" },
     ],
-    links: [{ label: "GitHub", href: "https://github.com/gbsvb13/fitcore" }],
   },
 ];
 
 export const skills = {
-  Languages: ["Java", "Python", "C++", "C", "Scala", "OCaml", "ARM Assembly", "Verilog"],
-  Tools: ["Linux", "Git", "Docker", "GCC", "eBPF", "SPIN / Promela", "Pytest", "Zedboard", "WordPress"],
-  "Soft skills": ["Leadership", "Teamwork", "Problem-Solving", "Communication", "Critical Thinking"],
+  Languages: [
+    "Java",
+    "Python",
+    "JavaScript",
+    "HTML/CSS",
+    "C++",
+    "C",
+    "Scala",
+    "OCaml",
+    "ARM Assembly",
+    "Verilog",
+  ],
+  Tools: [
+    "Linux",
+    "Git",
+    "GitHub",
+    "AWS (Amplify, Cognito, DynamoDB)",
+    "Docker",
+    "Vite",
+    "GCC",
+    "eBPF",
+    "SPIN / Promela",
+    "Pytest",
+    "Zedboard",
+    "WordPress",
+  ],
+  "Soft skills": [
+    "Leadership",
+    "Teamwork",
+    "Problem-Solving",
+    "Communication",
+    "Critical Thinking",
+  ],
   Spoken: ["Bahasa Malaysia", "English (fluent)", "Korean (intermediate)"],
 };
 
@@ -67,6 +100,11 @@ export const education = [
 ];
 
 export const activities = [
+  {
+    title: "Marathon Volunteer — JTBC Marathon",
+    year: "2026",
+    desc: "Monitored a road closure along the marathon route to keep the course clear for runners, and directed approaching drivers away from the restricted road.",
+  },
   {
     title: "Student Volunteer — QS Higher Ed Summit: Asia Pacific",
     year: "2025",

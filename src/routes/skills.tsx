@@ -30,11 +30,11 @@ function Skills() {
 
       <div className="mt-16 grid gap-6 md:grid-cols-2">
         {Object.entries(skills).map(([k, v]) => (
-          <div key={k} className="rounded-2xl border border-border bg-card p-6">
+          <div key={k} className="rounded-2xl glass p-6">
             <h3 className="font-semibold">{k}</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {v.map((s) => (
-                <span key={s} className="rounded-full bg-secondary px-3 py-1 text-sm">
+                <span key={s} className="rounded-full glass-chip px-3 py-1 text-sm">
                   {s}
                 </span>
               ))}
@@ -52,7 +52,7 @@ function Skills() {
         </Link>
         <Link
           to="/education"
-          className="rounded-full border border-input px-6 py-3 font-medium transition hover:bg-secondary"
+          className="rounded-full glass px-6 py-3 font-medium transition hover:bg-white/60"
         >
           My studies
         </Link>
